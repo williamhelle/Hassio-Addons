@@ -1,0 +1,49 @@
+{
+  "name": "Youtube-dl WebUI",
+  "description": "Youtube-dl WebUI is a small web interface for youtube-dl/yt-dlp. It allows you to host your own video downloader. After the download you can stream your videos from your web browser (or VLC or others) or save it on your computer directly from the list page. [https://github.com/timendum/Youtube-dl-WebUI#youtube-dl-webui]",
+  "version": "1.0.0",
+  "startup": "application",
+  "boot": "auto",
+  "slug": "yt_dl_webui",
+  "init": "false",
+  "host_network": true,
+  "map":
+    - "share:rw
+    - "config:rw
+    - "ssl:rw"
+  "arch": ["aarch64", "amd64", "armhf", "armv7", "i386"],
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:443]"
+  "options": {
+      "optionnals": {
+          "Install": null,
+          "Setup": null,
+      },
+      "commands": {
+          "edit": null,
+          "start": null,
+      }
+  },
+  "schema": {
+      "optionnals": {
+          "Install": "boll",
+          "Setup": "boll",
+      },
+      "commands": {
+          "edit": "boll",
+          "start": "boll",
+      }
+  },
+  "ports": {
+      "80/tcp": "3545",
+      "443/tcp": "3546",
+      "8080/tcp": "8080",
+      "8000/tcp": "8000",
+  },
+  "ports_description": {
+      "80/tcp": "Web interface",
+      "443/tcp": "Web UI interface",
+      "8080/tcp": "8080/tcp",
+      "8000/tcp": "8000/tcp",
+  },
+}
+  
